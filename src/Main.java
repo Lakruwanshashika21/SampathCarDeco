@@ -1,6 +1,5 @@
 import com.formdev.flatlaf.FlatLightLaf;
 import javax.swing.*;
-import java.awt.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -10,34 +9,11 @@ public class Main {
             System.out.println("Failed to initialize FlatLaf.");
         }
 
-        // Initialize DB tables
-        DatabaseInitializer.initialize();
+        // Optional: Create DB tables here
+        DatabaseInitializer.initialize(); // Implement if needed
 
         SwingUtilities.invokeLater(() -> {
-            JFrame mainFrame = new JFrame("Sampath Car Deco Shop System");
-            mainFrame.setSize(400, 200);
-            mainFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-            mainFrame.setLocationRelativeTo(null);
-
-            // Create Inventory Button
-            JButton btnInventory = new JButton("Open Inventory");
-
-            btnInventory.setFont(new Font("Arial", Font.BOLD, 16));
-            btnInventory.setFocusPainted(false);
-            btnInventory.setPreferredSize(new Dimension(200, 40));
-
-            btnInventory.addActionListener(e -> {
-                InventoryFrame inventoryFrame = new InventoryFrame();
-                inventoryFrame.setVisible(true);
-            });
-
-            JPanel panel = new JPanel();
-            panel.setLayout(new GridBagLayout());
-            panel.add(btnInventory);
-
-            mainFrame.add(panel);
-            mainFrame.setVisible(true);
-
+            new LoginFrame();  // Starts the login screen
         });
     }
 }

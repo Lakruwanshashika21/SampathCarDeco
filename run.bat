@@ -1,13 +1,16 @@
 @echo off
-echo === Compiling Java source files ===
-javac -cp "lib/*" -d out src/*.java
+cls
+
+echo Compiling Java files...
+javac -cp "lib/*" -d bin src\*.java
 
 if %errorlevel% neq 0 (
-    echo ❌ Compilation failed. Fix the errors above.
+    echo Compilation failed!
     pause
     exit /b
 )
 
-echo === Running the application ===
-java -cp "out;lib/*" Main
+echo Running the program...
+java -cp "bin;lib/*" MainAppFrame
+
 pause

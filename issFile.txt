@@ -1,0 +1,46 @@
+[Setup]
+AppName=Sampath Car Deco
+AppVersion=1.0
+DefaultDirName={pf}\SampathCarDeco
+DefaultGroupName=Sampath Car Deco
+UninstallDisplayIcon={app}\ShopApp.exe
+OutputBaseFilename=Setup_SampathCarDeco
+Compression=lzma
+SolidCompression=yes
+WizardStyle=modern
+SetupIconFile=app\resources\image\logo.ico
+
+[Files]
+; Main executable and JAR
+Source: "app\ShopApp.exe"; DestDir: "{app}"; Flags: ignoreversion
+Source: "app\SampathCarDeco.jar"; DestDir: "{app}"; Flags: ignoreversion
+
+; Libraries
+Source: "app\lib\*"; DestDir: "{app}\lib"; Flags: ignoreversion recursesubdirs createallsubdirs
+
+; Resources
+Source: "app\resources\*"; DestDir: "{app}\resources"; Flags: ignoreversion recursesubdirs createallsubdirs
+
+; Database (copied at first run)
+Source: "app\database\*"; DestDir: "{app}\database"; Flags: ignoreversion recursesubdirs createallsubdirs
+
+; Other folders
+Source: "app\barcodes\*"; DestDir: "{app}\barcodes"; Flags: ignoreversion recursesubdirs createallsubdirs
+Source: "app\Bill\*"; DestDir: "{app}\Bill"; Flags: ignoreversion recursesubdirs createallsubdirs
+Source: "app\Reports\*"; DestDir: "{app}\Reports"; Flags: ignoreversion recursesubdirs createallsubdirs
+
+; JRE bundled
+Source: "app\jre\*"; DestDir: "{app}\jre"; Flags: ignoreversion recursesubdirs createallsubdirs
+
+; License file (optional)
+Source: "app\license.txt"; DestDir: "{app}"; Flags: ignoreversion
+
+[Icons]
+Name: "{group}\Sampath Car Deco"; Filename: "{app}\ShopApp.exe"; IconFilename: "{app}\resources\image\logo.ico"
+Name: "{commondesktop}\Sampath Car Deco"; Filename: "{app}\ShopApp.exe"; IconFilename: "{app}\resources\image\logo.ico"; Tasks: desktopicon
+
+[Tasks]
+Name: "desktopicon"; Description: "Create a Desktop Shortcut"; GroupDescription: "Additional icons:"; Flags: checkedonce
+
+[Run]
+Filename: "{app}\ShopApp.exe"; Description: "Launch Sampath Car Deco"; Flags: nowait postinstall skipifsilent

@@ -1,0 +1,1 @@
+jar cfm SampathCarDeco.jar manifest.txt -C out/ .

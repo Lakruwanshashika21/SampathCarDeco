@@ -1,0 +1,2 @@
+Main-Class: Main
+Class-Path: lib/flatlaf-3.2.jar lib/sqlite-jdbc-3.50.2.0.jar lib/barcode4j-fop-ext-0.20.5-complete.jar lib/barcode4j-fop-ext-0.20.5.jar lib/barcode4j-fop-ext-complete.jar lib/barcode4j-fop-ext.jar lib/barcode4j-light.jar lib/barcode4j-xgc.jar lib/barcode4j.jar lib/itextpdf-5.5.13.2.jar lib/javax.activation.jar lib/javax.mail-1.6.2.jar lib/jcommon-1.0.23.jar lib/jfreechart-1.0.19.jar lib/pdfbox-3.0.5.jar lib/json-20240303.jar
